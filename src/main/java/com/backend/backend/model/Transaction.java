@@ -1,23 +1,32 @@
 package com.backend.backend.model;
 
+
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import java.math.BigDecimal;
+import lombok.*;
+
 import java.time.LocalDate;
 
 @Entity
-@Table
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Transaction {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal amount;
-    LocalDate date;
-    String description;
+
+    private Double amount;
+
+    private String type;
+
+    private String description;
+
+    private LocalDate date;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
+
