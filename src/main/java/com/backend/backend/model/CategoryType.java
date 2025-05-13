@@ -1,6 +1,6 @@
 package com.backend.backend.model;
 
-public enum CategoryType {
+public enum     CategoryType {
     REVENU,
     DEPENSE
 }

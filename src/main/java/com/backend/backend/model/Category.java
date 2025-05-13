@@ -1,27 +1,25 @@
 package com.backend.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-
 public class Category {
-    @Id
-    private int id;
-    private String nom;
-    CategoryType type;
 
-    public int getId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nom;
+    private String type;
+    private String description;
+
+    // Getters and setters...
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -33,12 +31,19 @@ public class Category {
         this.nom = nom;
     }
 
-    public CategoryType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(CategoryType type) {
+    public void setType(String type) {
         this.type = type;
     }
-}
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
