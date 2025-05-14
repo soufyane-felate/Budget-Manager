@@ -1,18 +1,17 @@
 package com.backend.backend.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 @Entity
-@Table
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +19,10 @@ public class Transaction {
     private BigDecimal amount;
     LocalDate date;
     String description;
+
+    @ManyToOne
+    Category category;
+
+
+
 }

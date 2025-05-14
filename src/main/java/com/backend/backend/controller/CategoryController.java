@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/categories")
-@CrossOrigin(origins = "*") // utile si tu fais un front en Angular
+@CrossOrigin(origins = "*") 
 public class CategoryController {
 
     @Autowired
