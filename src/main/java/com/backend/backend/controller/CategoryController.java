@@ -10,7 +10,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/categories")
-@CrossOrigin(origins = "*") 
+@CrossOrigin(origins = "*")
+
 public class CategoryController {
 
     @Autowired
