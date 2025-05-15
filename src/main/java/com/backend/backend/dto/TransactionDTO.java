@@ -1,9 +1,6 @@
 package com.backend.backend.dto;
 
-
-
 import lombok.*;
-
 import java.time.LocalDate;
 
 @Data
@@ -13,7 +10,6 @@ import java.time.LocalDate;
 public class TransactionDTO {
     private Long id;
     private Double amount;
-    private String type;
     private String description;
     private LocalDate date;
     private Long categoryId;
