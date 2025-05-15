@@ -18,5 +18,7 @@ public class Budget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long category;
+    private double budgetLimit;
 
 }
